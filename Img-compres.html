@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple image compression tool to optimize images for faster web performance.">
+    <meta name="keywords" content="image compression, SEO, compress images, optimize images">
+    <title>Image Compression Tool</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        header {
+            background-color: #4b4b4b;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        main {
+            padding: 50px 15px;
+        }
+
+        .compression-tool {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .compression-tool h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #imagePreview, #compressedImage {
+            margin-top: 30px;
+            display: none;
+        }
+
+        #imagePreview img, #compressedImage img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .adsense {
+            margin-top: 40px;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .adsense h3 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #4b4b4b;
+            color: white;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .compression-tool {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            button {
+                width: 100%;
+                padding: 14px;
+                font-size: 20px;
+            }
+
+            .adsense {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Image Compression Tool</h1>
+        <p>Optimize your images for faster load times and better performance.</p>
+    </header>
+
+    <main>
+        <section class="compression-tool">
+            <h2>Upload and Compress Your Image</h2>
+            <form id="compressionForm">
+                <input type="file" id="imageInput" accept="image/*" onchange="loadImage(event)">
+                <label for="compressionLevel">Compression Level:</label>
+                <input type="range" id="compressionLevel" min="1" max="100" value="50">
+                <span id="levelValue">50</span>%
+                <button type="button" onclick="compressImage()">Compress Image</button>
+            </form>
+
+            <div id="imagePreview">
+                <h3>Original Image</h3>
+                <img id="originalImage" src="" alt="Original Image Preview">
+            </div>
+
+            <div id="compressedImage">
+                <h3>Compressed Image</h3>
+                <img id="compressedImg" src="" alt="Compressed Image Preview">
+            </div>
+        </section>
+
+        <section class="adsense">
+            <h3>Advertisement</h3>
+            <!-- Google AdSense Ad Code -->
+            <div id="adsense-ad">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="YOUR-AD-CLIENT-ID"
+                     data-ad-slot="YOUR-AD-SLOT-ID"
+                     data-ad-format="auto"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Image Compression Tool. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Handle the image preview
+        function loadImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const img = new Image();
+                img.src = reader.result;
+                img.onload = function() {
+                    document.getElementById('originalImage').src = img.src;
+                    document.getElementById('imagePreview').style.display = 'block';
+                };
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        // Handle the image compression logic
+        function compressImage() {
+            const fileInput = document.getElementById('imageInput');
+            const compressionLevel = document.getElementById('compressionLevel').value;
+            const originalImage = document.getElementById('originalImage');
+            const compressedImageDiv = document.getElementById('compressedImage');
+            const compressedImg = document.getElementById('compressedImg');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        const scaleFactor = compressionLevel / 100;
+                        canvas.width = img.width * scaleFactor;
+                        canvas.height = img.height * scaleFactor;
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                        // Get the compressed image as a data URL
+                        const compressedDataURL = canvas.toDataURL('image/jpeg', scaleFactor);
+                        compressedImg.src = compressedDataURL;
+                        compressedImageDiv.style.display = 'block';
+                    };
+                    img.src = e.target.result;
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Update the compression level display value
+        document.getElementById('compressionLevel').addEventListener('input', function(e) {
+            document.getElementById('levelValue').textContent = e.target.value;
+        });
+    </script>
+
+</body>
+</html>
