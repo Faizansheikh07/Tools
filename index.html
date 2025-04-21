@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comprehensive suite of image and PDF tools for optimizing and enhancing your files.">
+    <meta name="keywords" content="image tools, PDF tools, compress image, resize image, convert PDF">
+    <title>Tools Suite</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fb;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('hero-image.jpg') center center/cover no-repeat;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Tool Cards */
+        .tools-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .tool-card {
+            background-color: white;
+            width: 250px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .tool-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .tool-card a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tool-card a:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .tools-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tool-card {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+                padding: 10px 15px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tools Suite</h1>
+        <p>Optimize, convert, and edit images & PDFs seamlessly</p>
+    </header>
+
+    <nav>
+        <a href="#image-tools">Image Tools</a>
+        <a href="#pdf-tools">PDF Tools</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Welcome to Tools Suite</h2>
+        <p>Your one-stop solution for all your image and PDF processing needs.</p>
+        <a href="#image-tools" class="cta-button">Get Started</a>
+    </section>
+
+    <section id="image-tools">
+        <h2 style="text-align:center;">Image Tools</h2>
+        <div class="tools-container">
+            <div class="tool-card">
+                <img src="compress-icon.png" alt="Compress Image">
+                <h3>Image Compressor</h3>
+                <p>Reduce image size without losing quality</p>
+                <a href="image-compressor.html">Try Now</a> <!-- Hyperlink added -->
+            </div>
+            <div class="tool-card">
+                <img src="resize-icon.png" alt="Resize Image">
+                <h3>Resize Image</h3>
+                <p>Change the dimensions of your images quickly</p>
+                <a href="resize-image.html">Try Now</a> <!-- Hyperlink added -->
+            </div>
+            <div class="tool-card">
+                <img src="convert-icon.png" alt="Convert Image">
+                <h3>Convert Image</h3>
+                <p>Convert your images to different formats</p>
+                <a href="convert-image.html">Try Now</a> <!-- Hyperlink added -->
+            </div>
+        </div>
+    </section>
+
+    <section id="pdf-tools">
+        <h2 style="text-align:center;">PDF Tools</h2>
+        <div class="tools-container">
+            <div class="tool-card">
+                <img src="pdf-compress-icon.png" alt="Compress PDF">
+                <h3>PDF Compressor</h3>
+                <p>Reduce PDF file size without compromising quality</p>
+                <a href="pdf-compressor.html">Try Now</a> <!-- Hyperlink added -->
+            </div>
+            <div class="tool-card">
+                <img src="pdf-merge-icon.png" alt="Merge PDF">
+                <h3>Merge PDFs</h3>
+                <p>Combine multiple PDFs into one file</p>
+                <a href="merge-pdf.html">Try Now</a> <!-- Hyperlink added -->
+            </div>
+            <div class="tool-card">
+                <img src="pdf-split-icon.png" alt="Split PDF">
+                <h3>Split PDFs</h3>
+                <p>Split large PDFs into smaller sections</p>
+                <a href="split-pdf.html">Try Now</a> <!-- Hyperlink added -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tools Suite. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
